@@ -10,6 +10,13 @@ type Query {
     posts: [Post!]! @all
     post(id: Int! @eq): Post @find
     hello: String!
+    greet(name: String!): String
+}
+
+type Mutation {
+	createUser(name: String!, email: String!, password: String!): User! @create
+	updateUser(id: ID!, name: String): User @update
+	deleteUser(id: ID!): User @delete
 }
 
 type User {
